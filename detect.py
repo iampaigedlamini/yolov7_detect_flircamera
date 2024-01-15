@@ -34,15 +34,13 @@ if num_cams == 0:
 cam = cam_list.GetByIndex(0)
 cam.Init()
 
-# ::::::::::::::::::: comment not to save :::::::::::::::::::
-#output_directory1 = "./runX/captured_images"
-#if not os.path.exists(output_directory1):
-#    os.makedirs(output_directory1)
-#
-#output_directory2 = "./runX/detected_images"
-#if not os.path.exists(output_directory2):
-#    os.makedirs(output_directory2)
-# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+output_directory1 = "./runX/captured_images"
+if not os.path.exists(output_directory1):
+    os.makedirs(output_directory1)
+
+output_directory2 = "./runX/detected_images"
+if not os.path.exists(output_directory2):
+    os.makedirs(output_directory2)
 
 # Acquisition controls 
 cam.AcquisitionMode.SetValue(PySpin.AcquisitionMode_Continuous)
