@@ -140,11 +140,9 @@ def detect(weights, model, source, conf_thres, iou_thres, img_size):
                     timestamp =datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     output_file.write(f'{timestamp} - {label}\n')
 
-                    # :::::::::::::::::::: comment not to save :::::::::::::::::::
-                    #image_file = f"detected_image_{image_count}.jpg"
-                    #image_file = os.path.join(output_directory2, image_file)
-                    #cv2.imwrite(image_file, im0)
-                    # ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                    image_file = f"detected_image_{image_count}.jpg"
+                    image_file = os.path.join(output_directory2, image_file)
+                    cv2.imwrite(image_file, im0)
         
         output_file.close()
 
@@ -206,12 +204,10 @@ try:
             image_result.Release()
 
             # Save capture image locally 
-            # ::::::::::::: comment not to save :::::::::::::
-            #image_filename = f"captured_image_{image_count}.jpg"
-            #image_filename = os.path.join(output_directory1, image_filename)
-            #cv2.imwrite(image_filename, colored_image)
+            image_filename = f"captured_image_{image_count}.jpg"
+            image_filename = os.path.join(output_directory1, image_filename)
+            cv2.imwrite(image_filename, colored_image)
             image_count += 1 
-            # ::::::::::::::::::::::::::::::::::::::::::::::
 
             # Image recognition CallBack function
             if capture_image_path is not None:
